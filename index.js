@@ -16,8 +16,8 @@
 
 
 function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random() * 3);
-    switch (computerChoice) {
+    let computerValue = Math.floor(Math.random() * 3);
+    switch (computerValue) {
         case 0:
             console.log("Rock!");
             break;
@@ -47,3 +47,10 @@ getHumanChoice();
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    //my code here!//
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
