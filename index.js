@@ -31,3 +31,16 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+function getHumanChoice() {
+    const readline = require("readline").createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+    readline.question("What do you choice?", humanChoice => {
+        console.log(`Ok, ${humanChoice}!`);
+        readline.close();
+    });
+}
+
+getHumanChoice();
