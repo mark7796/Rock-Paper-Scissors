@@ -1,20 +1,3 @@
-//creare una funzione, che randomicamente ritorni rock, paper o scissors//
- //creare la funzione getComputerChoice//
-    //creare una variante variabile computerChoice, uguale a metodo matematico per avere come risultato o 0 o 1 o 2//
-//creare switch, con argomento computerChoice//
-    //caso computerChoice = 0//
-        //console.log, "Rock!"//
-        //break//
-    //caso computerChoice = 1//
-        //console.log, "Paper!"//
-        //break//
-    //caso computerChoice = 2//
-        //console.log, "Scissors!"//
-        //break//
-//richiamare la funzione//
-
-
-
 function getComputerChoice() {
     let computerValue = Math.floor(Math.random() * 3);
     switch (computerValue) {
@@ -49,7 +32,16 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    //my code here!//
+    //make humanChoice parameter case-insensitive//
+        //metodo da trovare//
+    let humanChoice = humanSelection.toLowerCase();
+    //console.log a string value representing the round winner//
+        //creare una variante variabile winner uguale ""//
+        //creare uno swtich, con la logica del gioco//
+            //se human vince il valore di winner diventa H, se vince computer, il valore di winner diventa C//
+    
+    //increment the humanScore or computerScore//
+        //creare un if, basato sul valore di winner//
 }
 
 const humanSelection = getHumanChoice();
