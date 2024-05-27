@@ -32,3 +32,24 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice == computerChoice) {
+        console.log("Tie!");
+    } else if (humanChoice == "rock" && computerChoice == "paper") {
+        console.log("You lose!");
+    } else if (humanChoice == "rock" && computerChoice == "scissors") {
+        console.log("You win!");
+    } else if (humanChoice == "paper" && computerChoice == "scissors") {
+        console.log("You lose!");
+    } else if (humanChoice == "paper" && computerChoice == "rock") {
+        console.log("You win!");
+    } else if (humanChoice == "scissors" && computerChoice == "paper") {
+        console.log("You win!");
+    } else if (humanChoice == "scissors" && computerChoice == "rock") {
+        console.log("You lose!");
+    }
+}
+
+
+getComputerChoice();
