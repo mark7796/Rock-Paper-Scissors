@@ -1,33 +1,27 @@
 function getComputerChoice() {
-    let computerValue = "";
-    let x = Math.floor(Math.random() * 3);
-    switch (x) {
+    let computerChoice = Math.floor(Math.random() * 3);
+    switch (computerChoice) {
         case 0: 
-            computerValue = "rock";
+            console.log("rock");
             break;
         case 1: 
-            computerValue = "paper";
+            console.log("paper");
             break;
-        case 2:
-            computerValue = "scissors";
+        case 2: 
+            console.log("scissors");
             break;
     }
-    return computerValue;
 }
 
 function getHumanChoice() {
-    const readline = require('readline');
-
-    const rl = readline.createInterface({
+    const readline = require("readline").createInterface({
         input: process.stdin,
-        output: process.stdout
+        output: process.stout,
     });
-
-    rl.question('What do you choose? rock, paper or scissors?', (answer) => {
-        console.log(`Your choice is: ${answer}`);
-
-    rl.close();
-    });
+    readline.question("What do you choose? rock, paper or scissors?"), humanChoice => {
+        console.log(`${humanChoice}`);
+        readline.close();
+    }
 }
 
 let humanScore = 0;
@@ -51,5 +45,7 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
 
-getComputerChoice();
+playRound(humanSelection, computerSelection);
