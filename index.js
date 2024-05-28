@@ -1,5 +1,3 @@
-import readline from "node:readline/promises";
-
 function getComputerChoice() {
     let symbol = "";
     let computerChoice = Math.floor(Math.random() * 3);
@@ -20,13 +18,9 @@ function getComputerChoice() {
 
 
 
-async function getHumanChoice() {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-    const scelta = await rl.question("What do you choose?");
-    return scelta;
+function getHumanChoice() {
+   let scelta = prompt("What do you choice?");
+   return scelta;
 }
 
 let humanScore = 0;
@@ -56,7 +50,7 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = await getHumanChoice();
+const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log("computer", computerSelection);
@@ -64,4 +58,3 @@ console.log("umano", humanSelection);
 
 playRound(humanSelection, computerSelection);
 
-process.exit();
