@@ -59,8 +59,8 @@ function playRound (humanChoice, computerChoice) {
 const humanSelection = await getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log("computer", computerSelection);
-console.log("umano", humanSelection);
+console.log("Computer did", computerSelection);
+
 
 playRound(humanSelection, computerSelection);
 
