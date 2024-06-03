@@ -32,7 +32,7 @@ async function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound (humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log("Tie!");
     } else if (humanChoice == "rock" && computerChoice == "paper") {

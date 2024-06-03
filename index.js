@@ -26,7 +26,7 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound (humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log("Tie!");
     } else if (humanChoice == "rock" && computerChoice == "paper") {
@@ -50,11 +50,26 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-console.log("computer", computerSelection);
-console.log("umano", humanSelection);
 
-playRound(humanSelection, computerSelection);
+
+
+function playGame() {
+    for (i = 1; i <= 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log('Round ' + i);
+        console.log('Computer choose ' + computerSelection);
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore < computerScore) {
+        console.log('Computer wins with a score of ' + computerScore + "-" + humanScore + "...");
+    } else if (humanScore > computerScore) {
+        console.log('You win with a score of ' + humanScore + "-" + computerScore + "!");
+    } else {
+        console.log("Tie by " + humanScore + "-" + computerScore + ".");
+    }
+}
+
+playGame();
 
