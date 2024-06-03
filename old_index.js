@@ -61,4 +61,23 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log('Round ' + i);
+        console.log('Computer choose ' + computerSelection);
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore < computerScore) {
+        console.log('Computer wins with a score of ' + computerScore + "-" + humanScore + "...");
+    } else if (humanScore > computerScore) {
+        console.log('You win with a score of ' + humanScore + "-" + computerScore + "!");
+    } else {
+        console.log("Tie by " + humanScore + "-" + computerScore + ".");
+    }
+}
+
+playGame();
+
 process.exit();
