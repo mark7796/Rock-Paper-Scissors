@@ -1,6 +1,7 @@
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const results = document.querySelector('#results');
 
 
 
@@ -27,41 +28,49 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    const results = document.querySelector('#results');
     if (humanChoice === computerChoice) {
         const p = document.createElement('p');
-        p.textContent = "Tie!";
+        p.textContent = "Tie!" + humanScore + "-" + computerScore;
         results.appendChild(p);
     } else if (humanChoice == "rock" && computerChoice == "paper") {
-        const p = document.createElement('p');
-        p.textContent = "You lose!";
-        results.appendChild(p);
         computerScore++;
+        const p = document.createElement('p');
+        p.textContent = "You lose! " + humanScore + "-" + computerScore;
+        results.appendChild(p);
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
-        const p = document.createElement('p');
-        p.textContent = "You win!";
-        results.appendChild(p);
         humanScore++;
+        const p = document.createElement('p');
+        p.textContent = "You win! " + humanScore + "-" + computerScore;
+        results.appendChild(p);
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
-        const p = document.createElement('p');
-        p.textContent = "You lose!";
-        results.appendChild(p);
         computerScore++;
+        const p = document.createElement('p');
+        p.textContent = "You lose! " + humanScore + "-" + computerScore;
+        results.appendChild(p);
     } else if (humanChoice == "paper" && computerChoice == "rock") {
-        const p = document.createElement('p');
-        p.textContent = "You win!";
-        results.appendChild(p);
         humanScore++;
+        const p = document.createElement('p');
+        p.textContent = "You win! " + humanScore + "-" + computerScore;
+        results.appendChild(p);
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        const p = document.createElement('p');
-        p.textContent = "You win!";
-        results.appendChild(p);
         humanScore++;
-    } else if (humanChoice == "scissors" && computerChoice == "rock") {
         const p = document.createElement('p');
-        p.textContent = "You lose!";
+        p.textContent = "You win! " + humanScore + "-" + computerScore;
         results.appendChild(p);
+    } else if (humanChoice == "scissors" && computerChoice == "rock") {
         computerScore++;
+        const p = document.createElement('p');
+        p.textContent = "You lose! " + humanScore + "-" + computerScore;
+        results.appendChild(p);
+    }
+    if (humanScore == 5) {
+        const p = document.createElement('p');
+        p.textContent = `You won the game with a score of ${humanScore}-${computerScore}`;
+        results.appendChild(p);
+    } else if (computerScore == 5) {
+        const p = document.createElement('p');
+        p.textContent = `You lost the game with a score of ${humanScore}-${computerScore}`;
+        results.appendChild(p);
     }
 }
 
