@@ -27,25 +27,40 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+    const results = document.querySelector('#results');
     if (humanChoice === computerChoice) {
-        console.log("Tie!");
+        const p = document.createElement('p');
+        p.textContent = "Tie!";
+        results.appendChild(p);
     } else if (humanChoice == "rock" && computerChoice == "paper") {
-        console.log("You lose!");
+        const p = document.createElement('p');
+        p.textContent = "You lose!";
+        results.appendChild(p);
         computerScore++;
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
-        console.log("You win!");
+        const p = document.createElement('p');
+        p.textContent = "You win!";
+        results.appendChild(p);
         humanScore++;
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
-        console.log("You lose!");
+        const p = document.createElement('p');
+        p.textContent = "You lose!";
+        results.appendChild(p);
         computerScore++;
     } else if (humanChoice == "paper" && computerChoice == "rock") {
-        console.log("You win!");
+        const p = document.createElement('p');
+        p.textContent = "You win!";
+        results.appendChild(p);
         humanScore++;
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        console.log("You win!");
+        const p = document.createElement('p');
+        p.textContent = "You win!";
+        results.appendChild(p);
         humanScore++;
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
-        console.log("You lose!");
+        const p = document.createElement('p');
+        p.textContent = "You lose!";
+        results.appendChild(p);
         computerScore++;
     }
 }
